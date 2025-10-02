@@ -11,5 +11,6 @@ export const generateMetadata = async ({ params }: { params: { productId: string
 export default async function ProductDetails({ params, searchParams }: { params: Promise<{ productId: string }>, searchParams: Promise<{ star?: number, likes?: number }> }) { 
   const { productId } = await params;
   const { star, likes } = await searchParams;
+  await new Promise((resolve) => setTimeout(() => resolve(true), 3000));
   return <div>Product {productId} - Likes {likes} | Stars {star} | <AddCart /></div>;
 }
