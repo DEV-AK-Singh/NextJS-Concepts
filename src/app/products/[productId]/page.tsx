@@ -8,6 +8,8 @@ export const generateMetadata = async ({ params }: { params: { productId: string
   return { title: `Product ${productId} | ${title}` };
 }
 
-export default async function ProductDetails({ params }: { params: Promise<{ productId: string }> }) { 
-  return <div>Product {(await params).productId} | <AddCart /></div>;
+export default async function ProductDetails({ params, searchParams }: { params: Promise<{ productId: string }>, searchParams: Promise<{ star?: number, likes?: number }> }) { 
+  const { productId } = await params;
+  const { star, likes } = await searchParams;
+  return <div>Product {productId} - Likes {likes} | Stars {star} | <AddCart /></div>;
 }
