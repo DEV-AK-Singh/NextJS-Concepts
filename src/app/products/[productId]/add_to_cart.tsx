@@ -1,11 +1,12 @@
 "use client";
 
-import { redirect, useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import React from "react";
 
 
 export default function AddCart() {
-  const router = useRouter();
+  // const router = useRouter();
   const [count, setCount] = React.useState(0);
   const Navigate = () => {
     // router.push("/"); 

@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import React from "react";
 import AddCart from "./add_to_cart";
 
-export const generateMetadata = async ({ params }: { params: { productId: string } }) : Promise<Metadata> => {
-  const { productId } = params;
+export const generateMetadata = async ({ params }: { params: Promise<{ productId: string }> }) : Promise<Metadata> => {
+  const { productId } = await params;
   const title = await new Promise((resolve) => setTimeout(() => resolve(`Next.js`), 1000)); 
   return { title: `Product ${productId} | ${title}` };
 }

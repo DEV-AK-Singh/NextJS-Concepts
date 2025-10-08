@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import React from "react";
 
-export default async function Docs({ params }: { params: Promise<{ slug: string[] | number[] | any }> }) {
+export default async function Docs({ params }: { params: Promise<{ slug: number[] }> }) {
     const { slug } = await params;
     if (slug?.length == 3){
         if (slug[2] > 5) notFound();
@@ -13,8 +13,8 @@ export default async function Docs({ params }: { params: Promise<{ slug: string[
     else if (slug?.length == 1){
         return <div>features of {slug[0]}</div>;
     }
-    if (slug?.length > 3){
+    else{
         notFound();
-    }
+    } 
     return <div>Docs Home Page</div>;
 }
