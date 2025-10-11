@@ -15,6 +15,7 @@ export default function Home() {
         <span><Link href="/about" className="text-lg hover:underline">About</Link> | <Link href="/profile" className="text-lg hover:underline">Profile</Link></span>
         <span><Link href="/blog" >BLOG:</Link> <Link href="/blog/first" className="text-lg hover:underline">First</Link> | <Link href="/blog/second" className="text-lg hover:underline">Second</Link></span>
         <span><Link href="/products" >PRODUCTS:</Link> <Link href="/products/1" className="text-lg hover:underline">Product 1</Link> | <Link href="/products/2" className="text-lg hover:underline">Product 2</Link></span>
+        <span><Link href="/" >Users:</Link> <Link href="/user-client" className="text-lg hover:underline">User Client</Link> | <Link href="/user-server" className="text-lg hover:underline">User Server</Link></span>
       </main> 
     </div>
   );
